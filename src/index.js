@@ -1,4 +1,4 @@
-export const innTest = (value) => {
+export const testFunction = (value) => {
   const type = typeof value
   if (!['string', 'number'].includes(type)) {
     return false;

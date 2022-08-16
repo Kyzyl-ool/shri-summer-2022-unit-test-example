@@ -1,50 +1,50 @@
-import {innTest} from '.';
+import {testFunction} from '.';
 
-describe('Функция innTest', () => {
+describe('Функция testFunction', () => {
     it('Валидный числовой ИНН ФЛ', () => {
-        expect(innTest(895502613880)).toBeTruthy();
+        expect(testFunction(895502613880)).toBeTruthy();
     });
 
     it('Невалидный числовой ИНН ФЛ', () => {
-        expect(innTest(895502613881)).toBeFalsy();
+        expect(testFunction(895502613881)).toBeFalsy();
     });
 
     it('Валидный строчный ИНН ФЛ', () => {
-        expect(innTest('895502613880')).toBeTruthy();
+        expect(testFunction('895502613880')).toBeTruthy();
     });
 
     it('Невалидный строчный ИНН ФЛ', () => {
-        expect(innTest('895502613881')).toBeFalsy();
+        expect(testFunction('895502613881')).toBeFalsy();
     });
 
     it('Валидный числовой ИНН ЮЛ', () => {
-        expect(innTest(2312271585)).toBeTruthy();
+        expect(testFunction(2312271585)).toBeTruthy();
     });
 
     it('Невалидный числовой ИНН ЮЛ', () => {
-        expect(innTest(2312271586)).toBeFalsy();
+        expect(testFunction(2312271586)).toBeFalsy();
     });
 
     it('Валидный строчный ИНН ЮЛ', () => {
-        expect(innTest('2312271585')).toBeTruthy();
+        expect(testFunction('2312271585')).toBeTruthy();
     });
 
     it('Невалидный строчный ИНН ЮЛ', () => {
-        expect(innTest('2312271586')).toBeFalsy();
+        expect(testFunction('2312271586')).toBeFalsy();
     });
 
     it('Объект', () => {
-        expect(innTest({})).toBeFalsy();
+        expect(testFunction({})).toBeFalsy();
     });
 
     it('Длина не 10 и не 12', () => {
-        expect(innTest('2312271585111')).toBeFalsy();
-        expect(innTest('2312271')).toBeFalsy();
-        expect(innTest(2312271585111)).toBeFalsy();
-        expect(innTest(2312271)).toBeFalsy();
+        expect(testFunction('2312271585111')).toBeFalsy();
+        expect(testFunction('2312271')).toBeFalsy();
+        expect(testFunction(2312271585111)).toBeFalsy();
+        expect(testFunction(2312271)).toBeFalsy();
     });
 
     it('Валидный ИНН в 16ричном формате', () => {
-        expect(innTest(0x89D276E1)).toBeTruthy();
+        expect(testFunction(0x89D276E1)).toBeTruthy();
     })
 });
